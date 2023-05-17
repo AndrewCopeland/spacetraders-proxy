@@ -14,7 +14,7 @@ import (
 type Config struct {
 	Token     string `envconfig:"SPACETRADERS_TOKEN"`
 	Debug     bool   `envconfig:"DEBUG"`
-	Port      string `envconfig:"POST" default:"8080"`
+	Port      string `envconfig:"PORT" default:"8080"`
 	TargetURL string `envconfig:"TARGET_URL" default:"https://api.spacetraders.io"`
 }
 
@@ -24,6 +24,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error loading configuration: %v\n", err)
 	}
+	log.Print(config)
 	proxy(config)
 }
 
@@ -63,5 +64,5 @@ func proxy(config Config) {
 
 	// Start the server
 	log.Println("Proxy server listening on " + config.Port)
-	log.Fatal(http.ListenAndServe(config.Port, router))
+	log.Fatal(http.ListenAndServe(":"+config.Port, router))
 }
