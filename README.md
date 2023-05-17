@@ -29,4 +29,4 @@ Now you should see the response (something like)
 }
 ```
 
-Now wherever you implemented your client in your application, change the url from `https://api.spacetraders.io"` to `http://localhost:8081`. If your application is also containerized= your may need to wire the networks together in your docker-compose and reference the service name instead of localhost.
+Now wherever you implemented your client in your application, change the url from `https://api.spacetraders.io"` to `http://localhost:8081`. If your application is also containerized you may need to wire the networks together in your docker-compose and reference the service name instead of localhost.
