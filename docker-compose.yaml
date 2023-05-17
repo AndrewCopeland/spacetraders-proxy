@@ -1,0 +1,10 @@
+version: '3'
+services:
+  spacetraders-proxy:
+    image: ghcr.io/andrewcopeland/spacetraders-proxy:latest
+    ports:
+      - 8081:8081
+    environment:
+      - PORT=8081
+      - SPACETRADERS_TOKEN=${SPACETRADERS_TOKEN}
+    restart: unless-stopped

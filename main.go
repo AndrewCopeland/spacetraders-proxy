@@ -45,8 +45,9 @@ func proxyHandler(config Config) http.Handler {
 		if config.Debug {
 			fmt.Println(string(requestDump))
 		}
-
-		r.Header.Set("Authorization", "Bearer "+config.Token)
+		if config.Token != "" {
+			r.Header.Set("Authorization", "Bearer "+config.Token)
+		}
 		// log.Print("request from " + r.Header.Get("Ship-Symbol"))
 		r.Host = target.Host
 		r.URL.Host = target.Host
