@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: ghcr.io/AndrewCopeland/spacetraders-proxy
+  IMAGE_NAME: ghcr.io/andrewcopeland/spacetraders-proxy
 
 jobs:
   build-and-push:
